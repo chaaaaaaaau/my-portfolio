@@ -1,0 +1,83 @@
+@use "@/styles/_breakpoints.scss" as bp;
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 80%;
+    min-height: 72px;
+
+    margin: 0 auto;
+
+    @include bp.mobile {
+        width: 98%;
+        min-height: 64px;
+        justify-content: center;
+    }
+
+    /* between mobile and laptop */
+    @include bp.between(bp.$breakpoint-mobile, bp.$breakpoint-laptop) {
+        width: 94%;
+        min-height: 64px;
+        justify-content: center;
+    }
+
+    /* laptop and up (>= 1024px) */
+    @include bp.laptop-up {
+        width: 88%;
+    }
+
+    /* desktop and up (>= 1280px) */
+    @include bp.desktop-up {
+        width: 80%;
+    }
+
+
+    .link {
+        margin-left: 24px;
+        margin-right: 24px;
+
+        color: #060270;
+
+        display: flex;
+        align-items: center;
+
+        @include bp.mobile {
+            margin-left: 6px;
+            margin-right: 6px;
+            justify-content: center;
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+        /* between mobile and laptop */
+        @include bp.between(bp.$breakpoint-mobile, bp.$breakpoint-laptop) {
+            margin-left: 12px;
+            margin-right: 12px;
+            justify-content: center;
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+        .linkText {
+            margin-left: 4px;
+            text-align: center;
+
+            @include bp.mobile {
+                margin-left: 0;
+                margin-top: 2px;
+                font-size: 8px;
+            }
+
+            /* between mobile and laptop */
+            @include bp.between(bp.$breakpoint-mobile, bp.$breakpoint-laptop) {
+                margin-left: 0;
+                margin-top: 2px;
+                font-size: 12px;
+            }
+        }
+    }
+}

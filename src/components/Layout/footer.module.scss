@@ -1,0 +1,71 @@
+@use "@/styles/_breakpoints.scss" as bp;
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 64px;
+
+    border-top: 1px solid #060270;
+
+    width: 100%;
+    margin: 0 auto;
+
+    padding-left: 10%;
+    padding-right: 10%;
+
+    /* mobile (<= 479px) */
+    @include bp.mobile {
+        padding-left: 1%;
+        padding-right: 1%;
+        justify-content: center;
+        min-height: 48px;
+    }
+
+    /* between mobile and laptop */
+    @include bp.between(bp.$breakpoint-mobile, bp.$breakpoint-laptop) {
+        padding-left: 3%;
+        padding-right: 3%;
+        justify-content: center;
+        min-height: 48px;
+    }
+
+    /* laptop and up (>= 1024px) */
+    @include bp.laptop-up {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    /* desktop and up (>= 1280px) */
+    @include bp.desktop-up {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .left {
+        font-size: 16px;
+        color: #060270;
+
+        @include bp.mobile {
+            text-align: center;
+        }
+    
+        /* between mobile and laptop */
+        @include bp.between(bp.$breakpoint-mobile, bp.$breakpoint-laptop) {
+            text-align: center;
+        }
+    }
+
+    .right {
+        @include bp.mobile {
+            display: none;
+        }
+    
+        /* between mobile and laptop */
+        @include bp.between(bp.$breakpoint-mobile, bp.$breakpoint-laptop) {
+            display: none;
+        }
+    }
+
+}
