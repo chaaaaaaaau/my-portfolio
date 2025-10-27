@@ -33,7 +33,7 @@
     border-left: 8px ridge #ddd;
     border-right: 8px ridge #ddd;
 
-    padding: 48px 4px;
+    padding: 48px 4px 24px;
 
     width: 80%;
     margin: 0 auto;
@@ -55,24 +55,37 @@
     /* laptop and up (>= 1024px) */
     @include bp.laptop-up {
         width: 88%;
-        padding: 48px 12px;
+        padding: 48px 12px 24px;
     }
 
     /* desktop and up (>= 1280px) */
     @include bp.desktop-up {
         width: 80%;
-        padding: 48px 24px;
+        padding: 48px 24px 24px;
     }
     
 
     .title {
         font-size: 32px;
-        font-weight: bold;
+        font-family: var(--font-abril-fatface);
+        font-style: italic;
+
         color: #060270;
         margin-bottom: 24px;
 
         display: flex;
         align-items: center;
+
+        @include bp.mobile {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+    
+        /* between mobile and laptop */
+        @include bp.between(bp.$breakpoint-mobile, bp.$breakpoint-laptop) {
+            font-size: 28x;
+            margin-bottom: 16px;
+        }
 
         img {
             margin-right: 4px;
@@ -82,7 +95,7 @@
     .text {
         font-size: 16px;
         color: #060270;
-        margin-bottom: 48px;
+        margin-bottom: 24px;
         line-height: 1.5;
 
         ul {
@@ -92,6 +105,18 @@
 
         li {
             margin-bottom: 12px;
+        }
+    }
+
+    .contactItem {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+
+        color: #5650fb;
+
+        .link {
+            margin-left: 8px;
         }
     }
 

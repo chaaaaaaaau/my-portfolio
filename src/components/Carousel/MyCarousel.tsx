@@ -7,6 +7,7 @@ import CarouselItemProps from "@/interfaces/CarouselItem";
 
 const MyCarousel = ({ items }: { items: CarouselItemProps[] }) => {
     return (
+        <>
         <Carousel className="myCarousel" autoPlay={true} interval={5000} showStatus={false} showArrows={false} infiniteLoop={true}>
             {items.map((item) => (
                 <div key={item.id}>
@@ -14,6 +15,9 @@ const MyCarousel = ({ items }: { items: CarouselItemProps[] }) => {
                 </div>
             ))}
         </Carousel>
+        <br />
+        </>
+
     );
 }
 

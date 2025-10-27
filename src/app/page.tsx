@@ -4,6 +4,8 @@ import containerStyles from "@/components/Layout/container.module.scss";
 import MyCarousel from "@/components/Carousel/MyCarousel";
 
 import { SV_DEMOS, EW_DEMOS, YL_DEMOS, TP_DEMOS, IDAD_DEMOS } from "@/constants/demos";
+import MyIcon from "@/components/Icon/MyIcon";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -14,8 +16,9 @@ export default function Home() {
                     Sam CHAU
                 </div>
                 <div className={containerStyles.text}>
-                    System Analyst in the IT industry with five years of experience, specializing in requirements analysis, solution design, and end-to-end
-                    delivery of web applications.
+                    Welcome to my homepage! I&apos;m a System Analyst in the IT industry with five years of experience, specializing in requirements analysis,
+                    solution design, and end-to-end delivery of web applications. I also take on select freelance projects, partnering with teams to ship
+                    practical, business-ready solutions.
                 </div>
             </div>
             <div className={containerStyles.container} id="project">
@@ -23,11 +26,29 @@ export default function Home() {
                     <Image src="/images/arrow.webp" alt="logo" width={64} height={32} />
                     Project
                 </div>
+                <div className={containerStyles.text}>
+                    A selection of projects I&apos;ve worked on:
+                    </div>
+                    <div className={containerStyles.text}>
+                    This is a game center web app built with Next.js. It allows users to compete against each other in various Unity WebGL games.
+                </div>
                 <MyCarousel items={SV_DEMOS} />
+                <div className={containerStyles.text}>
+                    This is a social platform web app built with Next.js. It allows users to share their thoughts and log in as a virtual avatar in a 3D world.
+                </div>
                 <MyCarousel items={EW_DEMOS} />
+                <div className={containerStyles.text}>
+                    This is a Zi Wei astrology web system that generates personalized birth charts from simple inputs.
+                </div>
                 <MyCarousel items={YL_DEMOS} />
-                <MyCarousel items={TP_DEMOS} />
+                <div className={containerStyles.text}>
+                    These are an add-on event pages that demonstrate some mobile-based web designs.
+                </div>
                 <MyCarousel items={IDAD_DEMOS} />
+                <div className={containerStyles.text}>
+                    These are sample landing page designs I created.
+                </div>
+                <MyCarousel items={TP_DEMOS} />
             </div>
             <div className={containerStyles.container} id="work">
                 <div className={containerStyles.title}>
@@ -87,8 +108,20 @@ export default function Home() {
                     <Image src="/images/arrow.webp" alt="logo" width={64} height={32} />
                     Contact
                 </div>
-                <div className={containerStyles.text}>Hello World</div>
+                <div className={containerStyles.text}>
+                    I&apos;m always looking for new opportunities and collaborations. Feel free to reach out to me via:
+                </div>
+                <div className={containerStyles.contactItem}>
+                    <MyIcon name="email" />
+                    <Link href="mailto:chauchaulatias@gmail.com" target="_blank" className={containerStyles.link}>chauchaulatias@gmail.com</Link>
+                </div>
+                <div className={containerStyles.contactItem}>
+                    <MyIcon name="github" />
+                    <Link href="https://github.com/chaaaaaaaau" target="_blank" className={containerStyles.link}>github.com/chaaaaaaaau</Link>
+                </div>
             </div>
+            <div className={containerStyles.container}></div>
+            <div className={containerStyles.container}></div>
         </div>
     );
 }

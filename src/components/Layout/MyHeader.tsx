@@ -36,7 +36,7 @@ const MyHeader = () => {
         <img
             src="/images/banner-1.webp"
             alt="banner"
-            style={{ width: '100%', objectFit: 'cover', height: '128px', marginBottom: '-4px' }}
+            className={styles.headerBanner}
         />
         </>
 
