@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## My Portfolio (Next.js 15 · App Router · TypeScript · SCSS)
+
+Personal portfolio built with Next.js App Router, TypeScript, SCSS modules, and a lightweight carousel. It showcases projects, work experience, and contact links.
+
+### Tech Stack
+
+-   **Framework**: Next.js 15 (App Router)
+-   **Language**: TypeScript
+-   **UI**: SCSS Modules, Google Fonts (`Abril_Fatface`), MUI Icons
+-   **Carousel**: `react-responsive-carousel`
+-   **Images/Assets**: `public/images/**` (WebP)
+
+### Key Features
+
+-   **App Router structure** with `src/app/layout.tsx` and `src/app/page.tsx`.
+-   **Global styles** in `src/app/globals.scss` and SCSS modules under `src/components/Layout/**`.
+-   **Carousel component** `src/components/Carousel/MyCarousel.tsx` driven by data in `src/constants/demos.ts`.
+-   **Icon abstraction** via `src/components/Icon/MyIcon.tsx` (MUI Icons).
+-   **Path alias** `@/*` configured in `tsconfig.json`.
+-   **SEO metadata & Open Graph** configured in `src/app/layout.tsx`.
+-   **Auto-redirect on 404** using `src/app/not-found.tsx` to redirect to `/`.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+-   Node.js 18+ and npm
+
+### Install
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# visit http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Start (Production)
 
-## Learn More
+```bash
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Lint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Project Structure (excerpt)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+  app/
+    layout.tsx           # Root layout with fonts, SEO metadata, header/footer
+    page.tsx             # Home page: intro, projects, work exp, contact
+    globals.scss         # Global styles + carousel overrides
+    not-found.tsx        # Redirects unknown routes to '/'
+  components/
+    Carousel/MyCarousel.tsx
+    Icon/MyIcon.tsx
+    Layout/
+      MyHeader.tsx, MyFooter.tsx, *.module.scss
+  constants/
+    demos.ts             # Carousel data sources
+  interfaces/
+    *.ts                 # Component interfaces (e.g., CarouselItem, Icon)
+public/
+  images/**              # Web assets (og, fav, demos, etc.)
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Customization
+
+-   **Content**: Update texts in `src/app/page.tsx`.
+-   **Carousel items**: Edit `src/constants/demos.ts`; place images under `public/images/demo`.
+-   **Styles**: Tweak `src/app/globals.scss` and layout SCSS modules in `src/components/Layout/**`.
+-   **Icons**: Extend `src/components/Icon/MyIcon.tsx` for new icon names.
+-   **SEO**: Adjust `metadata` in `src/app/layout.tsx` (title, description, Open Graph, icons).
+
+---
+
+## Deployment
+
+The project is optimized for Vercel. After building, you can deploy with your preferred provider. For Vercel-specific guidance, see Next.js deployment docs.
+
+---
+
+## Scripts
+
+-   `dev`: start development server
+-   `build`: production build
+-   `start`: run production server
+-   `lint`: run ESLint
+
+---

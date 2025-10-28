@@ -5,32 +5,33 @@
     justify-content: flex-end;
     align-items: center;
 
-    width: 80%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    background-color: #eef0f3;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+    width: 100%;
     min-height: 72px;
 
     margin: 0 auto;
 
     @include bp.mobile {
-        width: 98%;
+        
         min-height: 64px;
         justify-content: center;
     }
 
     /* between mobile and laptop */
     @include bp.between(bp.$breakpoint-mobile, bp.$breakpoint-laptop) {
-        width: 94%;
+       
         min-height: 64px;
         justify-content: center;
-    }
-
-    /* laptop and up (>= 1024px) */
-    @include bp.laptop-up {
-        width: 88%;
-    }
-
-    /* desktop and up (>= 1280px) */
-    @include bp.desktop-up {
-        width: 80%;
     }
 
 
@@ -88,13 +89,17 @@
     height: 128px;
     margin-bottom: -4px;
 
+    margin-top: 64px;
+
     /* mobile (<= 479px) */
     @include bp.mobile {
         height: 72px;
+        margin-top: 56px;
     }
 
     /* between mobile and laptop */
     @include bp.between(bp.$breakpoint-mobile, bp.$breakpoint-laptop) {
         height: 72px;
+        margin-top: 56px;
     }
 }

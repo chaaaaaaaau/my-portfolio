@@ -1,3 +1,5 @@
+
+
 import Image from "next/image";
 import containerStyles from "@/components/Layout/container.module.scss";
 
@@ -8,6 +10,7 @@ import MyIcon from "@/components/Icon/MyIcon";
 import Link from "next/link";
 
 export default function Home() {
+
     return (
         <div className={containerStyles.parentContainer}>
             <div className={containerStyles.container} id="home">
@@ -118,6 +121,10 @@ export default function Home() {
                 <div className={containerStyles.contactItem}>
                     <MyIcon name="github" />
                     <Link href="https://github.com/chaaaaaaaau" target="_blank" className={containerStyles.link}>github.com/chaaaaaaaau</Link>
+                </div>
+                <div className={containerStyles.contactItem}>
+                    <MyIcon name="linkedin" />
+                    <Link href="https://www.linkedin.com/in/samchaukw" target="_blank" className={containerStyles.link}>linkedin.com/in/samchaukw</Link>
                 </div>
             </div>
             <div className={containerStyles.container}></div>

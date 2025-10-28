@@ -33,7 +33,7 @@
     border-left: 8px ridge #ddd;
     border-right: 8px ridge #ddd;
 
-    padding: 48px 4px 24px;
+    padding: 72px 4px 4px;
 
     width: 80%;
     margin: 0 auto;
@@ -55,13 +55,13 @@
     /* laptop and up (>= 1024px) */
     @include bp.laptop-up {
         width: 88%;
-        padding: 48px 12px 24px;
+        padding: 64px 12px 4px;
     }
 
     /* desktop and up (>= 1280px) */
     @include bp.desktop-up {
         width: 80%;
-        padding: 48px 24px 24px;
+        padding: 64px 24px 4px;
     }
     
 
